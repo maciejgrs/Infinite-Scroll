@@ -1,7 +1,7 @@
 let totalImages = 30;
 const url = `https://api.unsplash.com/photos/random/?client_id=${apiKey}&count=${totalImages}`;
 const imageContainer = document.querySelector(".image-container");
-const loader = document.querySelector('#loader')
+const loader = document.querySelector("#loader");
 let arr;
 let imagesLoaded = 0;
 
@@ -17,13 +17,11 @@ const fetchData = async () => {
 };
 
 const imageLoaded = () => {
-  console.log("IMAGE LOADED", imagesLoaded);
   imagesLoaded++;
 
   if (imagesLoaded === totalImages) {
     ready = true;
-    loader.hidden = true
-    console.log("ready =", ready);
+    loader.hidden = true;
   }
 };
 const setAttribute = (element, atr) => {
@@ -33,7 +31,6 @@ const setAttribute = (element, atr) => {
 };
 
 const displayImages = () => {
-  console.log("total images", totalImages);
   arr.forEach((object) => {
     const item = document.createElement("a");
     setAttribute(item, {
